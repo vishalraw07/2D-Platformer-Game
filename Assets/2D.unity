@@ -344,6 +344,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 890580006}
+  rb: {fileID: 890580002}
+  jump: 250
 --- !u!95 &890580006 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 2364026284273896862, guid: d5b89aa9fa4e1914daa05f3750509d4d,
