@@ -5,7 +5,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public Animator animator;
-     
+    public float speed;
+
      private void Awake() {
         Debug.Log("PlayerController controller awakes");
     }
@@ -20,14 +21,16 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
 
-        float speed = Input.GetAxisRaw("Horizontal"); //value of this [-1 to 1]
-        animator.SetFloat("Speed", Mathf.Abs(speed));
-    Vector3 scale = transform.localScale;
-        if(speed<0)
+        float horizontal = Input.GetAxisRaw("Horizontal"); //value of this [-1 to 1]
+        MoveCharacter(horizontal);
+
+        animator.SetFloat("Speed", Mathf.Abs(horizontal));
+        Vector3 scale = transform.localScale;
+        if(horizontal<0)
         {
             scale.x = -1f * Mathf.Abs(scale.x);
         }
-        else if(speed >0)
+        else if(horizontal >0)
         {
              scale.x = Mathf.Abs(scale.x);
         }
@@ -55,6 +58,13 @@ public class PlayerController : MonoBehaviour
         transform.localScale = scale;
     }
 
+
+    private void MoveCharacter(float horizontal)
+    {
+        Vector3 position = transform.position;
+        position.x = position.x + horizontal * speed * Time.deltaTime;
+        transform.position = position;
+    }
    
     private void OnCollisionEnter2D(Collision2D collision) {
         Debug.Log("Collision: " + collision.gameObject.name);        
