@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public ScoreController scoreController;
     private Rigidbody2D rb2d;
     private BoxCollider2D boxCollider;
     public Animator animator;
@@ -17,6 +18,12 @@ public class PlayerController : MonoBehaviour
         Debug.Log("PlayerController controller awakes");
         rb2d = gameObject.GetComponent<Rigidbody2D>();
         boxCollider = gameObject.GetComponent<BoxCollider2D>();
+    }
+
+    public void PickUpKey()
+    {
+        Debug.Log("Key Collected");
+        scoreController.IncreaseScore(10);
     }
 
     // Start is called before the first frame update
