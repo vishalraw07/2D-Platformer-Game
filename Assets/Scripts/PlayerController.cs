@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -24,6 +25,22 @@ public class PlayerController : MonoBehaviour
     {
         Debug.Log("Key Collected");
         scoreController.IncreaseScore(10);
+    }
+
+    public void KillPlayer()
+    {
+        Debug.Log("Player killed by enemy");
+        //play death animation
+        //UI message player dead
+        //restart level
+        //Destroy(gameObject);
+        ReloadLevel();
+    }
+
+    private void ReloadLevel()
+    {
+        Debug.Log("Reloading scene");
+        SceneManager.LoadScene(0);
     }
 
     // Start is called before the first frame update
