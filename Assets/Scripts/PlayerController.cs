@@ -5,14 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    public ScoreController scoreController;
+    [SerializeField] ScoreController scoreController;
+    [SerializeField] Animator animator;
     private Rigidbody2D rb2d;
     private BoxCollider2D boxCollider;
-    public Animator animator;
-    public float speed;
-    public float jumpforce;
-     
-    public bool isGrounded;
+    [SerializeField] float speed;
+    [SerializeField] float jumpforce;
+    [SerializeField] bool isGrounded;
     
 
      private void Awake() {
@@ -41,12 +40,6 @@ public class PlayerController : MonoBehaviour
     {
         Debug.Log("Reloading scene");
         SceneManager.LoadScene(0);
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
     }
 
     // Update is called once per frame
@@ -100,18 +93,11 @@ public class PlayerController : MonoBehaviour
         bool crouch = Input.GetKeyDown(KeyCode.LeftControl);
         animator.SetBool("Crouch", crouch);
     
-        if(crouch == true)
-        {
-             scale.y = Mathf.Abs(scale.y);
-        }
-        transform.localScale = scale;
-
     }
-
- 
    
-   private void OnCollisionStay2D(Collision2D other) 
-   {    
+   private void OnCollisionEnter2D(Collision2D other) 
+   {   
+        Debug.Log("Collision: " + other.gameObject.name);  
         if(other.transform.tag== "platform")
             isGrounded= true; 
    }
@@ -120,8 +106,6 @@ public class PlayerController : MonoBehaviour
         if(other.transform.tag== "platform")
             isGrounded= false; 
    }
-    private void OnCollisionEnter2D(Collision2D collision) {
-        Debug.Log("Collision: " + collision.gameObject.name);        
-    }
+     
 
 }
