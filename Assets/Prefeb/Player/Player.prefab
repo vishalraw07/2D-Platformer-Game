@@ -245,7 +245,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreController: {fileID: 0}
+  gameOverController: {fileID: 0}
   animator: {fileID: 2364026284273896862}
   speed: 7
-  jumpforce: 1.2
+  jumpforce: 2
   isGrounded: 0

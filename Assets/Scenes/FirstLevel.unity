@@ -141,6 +141,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 47232214396621416, guid: d5b89aa9fa4e1914daa05f3750509d4d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2499593093235626752, guid: d5b89aa9fa4e1914daa05f3750509d4d,
         type: 3}
       propertyPath: m_SortingOrder
@@ -230,10 +235,9 @@ GameObject:
   - component: {fileID: 1085464851}
   - component: {fileID: 1085464850}
   - component: {fileID: 1085464849}
-  - component: {fileID: 1085464848}
   - component: {fileID: 1085464847}
   m_Layer: 0
-  m_Name: DeathFloor (1)
+  m_Name: DeathFloor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -248,23 +252,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1085464846}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2cf120780c2821b4c91cd32a098c6ed5, type: 3}
+  m_Script: {fileID: 11500000, guid: 650eeb255b8b31948becfca40e66caeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  respawnPoint: 1
---- !u!114 &1085464848
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1085464846}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2cf120780c2821b4c91cd32a098c6ed5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  respawnPoint: 1
 --- !u!212 &1085464849
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -773,6 +763,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreController: {fileID: 0}
+  gameOverController: {fileID: 0}
   animator: {fileID: 1966299040}
   speed: 7
   jumpforce: 1.2

@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] ScoreController scoreController;
+    public GameOverController gameOverController;
     [SerializeField] Animator animator;
     private Rigidbody2D rb2d;
     private BoxCollider2D boxCollider;
@@ -33,13 +34,15 @@ public class PlayerController : MonoBehaviour
         //UI message player dead
         //restart level
         //Destroy(gameObject);
-        ReloadLevel();
+        gameOverController.PlayerDied();
+        this.enabled = false;
+        //ReloadLevel();
     }
 
     private void ReloadLevel()
     {
         Debug.Log("Reloading scene");
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 
     // Update is called once per frame

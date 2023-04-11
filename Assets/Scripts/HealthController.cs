@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,8 +7,11 @@ using UnityEngine.SceneManagement;
 public class HealthController : MonoBehaviour
 {
     public int playerHealth;
+    public GameOverController gameOverController;
+    public PlayerController playerController;
     [SerializeField] private Image[] hearts;
-     
+
+    
 
     private void Start()
     {
@@ -20,7 +23,7 @@ public class HealthController : MonoBehaviour
         if(playerHealth <= 0)
         {
             Debug.Log("Player is dead");
-            SceneManager.LoadScene(0);
+            playerController.KillPlayer();
         }
 
         for(int i=0; i < hearts.Length; i++)
@@ -37,4 +40,5 @@ public class HealthController : MonoBehaviour
             }
         }
     }
+
 }
