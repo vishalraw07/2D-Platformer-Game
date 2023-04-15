@@ -11,9 +11,14 @@ public class LevelOverController : MonoBehaviour
     
         if(collision.gameObject.GetComponent<PlayerController>() != null)
         {
+            /*
             //level is done
             Debug.Log("Level Completed");
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+            */
+            Debug.Log("Next Level is unlocked");
+            //LevelManager.Instance.SetLevelStatus(SceneManager.GetActiveScene().name,LevelStatus.Completed);
+            LevelManager.Instance.MarkCurrentLevelComplete();
         }
         
    }
