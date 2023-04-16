@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelOverController : MonoBehaviour
 {
+    public EndLevel endLevel;
 
    private void OnTriggerEnter2D(Collider2D collision)
    {
@@ -19,6 +20,8 @@ public class LevelOverController : MonoBehaviour
             Debug.Log("Next Level is unlocked");
             //LevelManager.Instance.SetLevelStatus(SceneManager.GetActiveScene().name,LevelStatus.Completed);
             LevelManager.Instance.MarkCurrentLevelComplete();
+            endLevel.CompletedLevel();
+            
         }
         
    }

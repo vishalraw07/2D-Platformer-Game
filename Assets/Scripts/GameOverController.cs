@@ -8,6 +8,7 @@ public class GameOverController : MonoBehaviour
 {
     public Button buttonRestart;
     public Button buttonMainMenu;
+   
   
     private void Awake()
     {
@@ -34,4 +35,7 @@ public class GameOverController : MonoBehaviour
         Debug.Log("Exting to main menu");
         SceneManager.LoadScene(0);
     }
+
+    
+
 }

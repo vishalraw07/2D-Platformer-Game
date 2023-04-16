@@ -29,7 +29,6 @@ public class LevelLoader : MonoBehaviour
             case LevelStatus.Completed:
             SceneManager.LoadScene(LevelName);
             break;
-        }
-        
+        } 
     }
 }
