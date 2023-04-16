@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - platform
+  - DeathFloor
   layers:
   - Default
   - TransparentFX
@@ -13,8 +15,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Enemy layer 1
+  - Enemy layer 2
   - 
   - 
   - 
