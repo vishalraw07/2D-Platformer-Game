@@ -1329,6 +1329,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 890580002, guid: d5b89aa9fa4e1914daa05f3750509d4d, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 890580004, guid: d5b89aa9fa4e1914daa05f3750509d4d, type: 3}
       propertyPath: scoreController
       value: 

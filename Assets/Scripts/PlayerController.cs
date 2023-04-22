@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float speed;
     [SerializeField] float jumpforce;
     [SerializeField] bool isGrounded;
+    [SerializeField] bool isMoving = false;
     
 
      private void Awake() {
@@ -51,7 +52,20 @@ public class PlayerController : MonoBehaviour
 
         float horizontal = Input.GetAxisRaw("Horizontal"); //value of this [-1 to 1]
         float vertical = Input.GetAxisRaw("Vertical");
-        MoveCharacter(horizontal, vertical);
+        if( horizontal != 0)
+        {
+            MoveCharacter(horizontal, vertical);
+            if(!isMoving)
+            {
+                SoundManager.Instance.Play(Sounds.PlayerMove);
+                isMoving = true;
+            }
+        }
+        else
+        {
+            isMoving = false;
+        }
+        //MoveCharacter(horizontal, vertical);
         HorizontalAnimation(horizontal);
         VerticalAnimation(vertical);
    
@@ -100,6 +114,7 @@ public class PlayerController : MonoBehaviour
    
    private void OnCollisionEnter2D(Collision2D other) 
    {   
+    
         Debug.Log("Collision: " + other.gameObject.name);  
         if(other.transform.tag== "platform")
             isGrounded= true; 
